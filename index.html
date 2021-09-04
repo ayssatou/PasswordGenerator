@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <div class="card">
+      <div class="card-header">
+        <h2>Generate a Password</h2>
+      </div>
+      <div class="card-body">
+        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+      </div>
+      <div class="card-footer">
+        <button id="open-password-generation-modal" class="btn">Open password generator</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="password-generation-modal" class="modal">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <span id="password-generation-close">&times;</span>
+        <h2>Password generator</h2>
+      </div>
+
+      <div class="modal-body">
+
+        <ul id="password-settings">
+          <li>
+            <div id="char-count-container">
+              <label for="char-count-text">Choose password length (8-128 characters)</label>
+              <input type="text" value="8" id="char-count-text">
+              <input type="range" min="8" max="128" value="8" id="char-count-slider">
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" id="lowercase-checkbox">
+            <label for="lowercase-checkbox">Include Lowercase (abc...)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="uppercase-checkbox">
+            <label for="uppercase-checkbox">Include Uppercase (ABC...)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="numeric-checkbox">
+            <label for="numeric-checkbox">Include Numeric (123...)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="special-checkbox">
+            <label for="special-checkbox">Include Special characters ($%&...)</label>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="modal-footer">
+        <button id="generate-password" class="btn">Generate Password</button>
+      </div>
+
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
